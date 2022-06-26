@@ -52,10 +52,14 @@ RUN groupadd df \
 WORKDIR /home/df
 USER df
 
-# Install Dwarf Fortress.
-ARG DF_VERSION=47_04
-RUN wget http://www.bay12games.com/dwarves/df_${DF_VERSION}_linux.tar.bz2 \
- && tar xf df_${DF_VERSION}_linux.tar.bz2 \
- && rm df_${DF_VERSION}_linux.tar.bz2 \
- && mv df_linux/libs/libstdc++.so.6 df_linux/libs/libstdc++.so.6.disabled \
- && sed -i 's/[WINDOWED:YES]/[WINDOWED:NO]/' df_linux/data/init/init.txt
+# Install signal/discord.
+RUN \
+	add-pkg software-properties-common apt-transport-https ca-certificates curl gnupg2 libgtk-3-0 procps libgbm-dev && \
+	curl -s 'https://updates.signal.org/desktop/apt/keys.asc' | apt-key add - && \
+	add-apt-repository 'deb https://updates.signal.org/desktop/apt xenial main' && \
+	add-pkg signal-desktop=5.47.0
+ 
+ COPY startapp.sh /startapp.sh
+
+# Set environment variables
+ENV APP_NAME="signal-desktop"
