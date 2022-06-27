@@ -73,11 +73,6 @@ RUN ln -s /usr/share/novnc/vnc_lite.html /usr/share/novnc/index.html \
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 ENTRYPOINT [ "supervisord", "-c", "/etc/supervisor/supervisord.conf" ]
 
-# Run everything as standard user/group df.
-RUN groupadd df \
- && useradd --create-home --gid df df
-WORKDIR /home/df
-USER df
 
 EXPOSE 8080 8081
 
