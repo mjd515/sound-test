@@ -64,3 +64,4 @@ RUN \
 
 # Set environment variables
 ENV APP_NAME="signal-desktop"
+
