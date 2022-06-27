@@ -33,6 +33,7 @@ RUN apt-get update \
       libgbm-dev && \
       curl -s 'https://updates.signal.org/desktop/apt/keys.asc' | apt-key add - && \
 	add-apt-repository 'deb https://updates.signal.org/desktop/apt xenial main' && \
+	apt-get update && \
 	apt-get install signal-desktop && \
 	rm -rf /var/lib/apt/lists/*
 
