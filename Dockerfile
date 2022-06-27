@@ -29,6 +29,7 @@ RUN apt-get update \
       ca-certificates \
       gnupg2 \ 
       procps \
+      curl \
       libgbm-dev && \
       curl -s 'https://updates.signal.org/desktop/apt/keys.asc' | apt-key add - && \
 	add-apt-repository 'deb https://updates.signal.org/desktop/apt xenial main' && \
