@@ -10,7 +10,7 @@ RUN apt-get update \
       gstreamer1.0-pulseaudio \
       gstreamer1.0-tools \
       libglu1-mesa \
-      libgtk3.0-0 \
+      libgtk-3-0 \
       libncursesw5 \
       libopenal1 \
       libsdl-image1.2 \
