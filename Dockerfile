@@ -60,6 +60,7 @@ RUN \
 	add-pkg signal-desktop=5.47.0
  
  COPY startapp.sh /startapp.sh
+ 
 
 # Set environment variables
 ENV APP_NAME="signal-desktop"
