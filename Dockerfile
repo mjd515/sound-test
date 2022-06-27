@@ -34,7 +34,8 @@ RUN apt-get update \
       curl -s 'https://updates.signal.org/desktop/apt/keys.asc' | apt-key add - && \
 	add-apt-repository 'deb https://updates.signal.org/desktop/apt xenial main' && \
 	apt-get update && \
-	apt-get install signal-desktop && \
+	DEBIAN_FRONTEND=noninteractive apt-get install --yes --no-install-recommends && \
+	signal-desktop && \
 	rm -rf /var/lib/apt/lists/*
 
  
