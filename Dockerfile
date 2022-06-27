@@ -1,6 +1,6 @@
 FROM debian:buster
 
-ENV LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=C.UTF-8 DISPLAY=:0.0 APP_NAME="signal-desktop" DISPLAY_SETTINGS="1920x1080x24"
+ENV LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=C.UTF-8 DISPLAY=:0.0 APP_NAME="signal-desktop" DISPLAY_WIDTH="1280" DISPLAY_HEIGHT="720"
 
 # Install dependencies.
 RUN apt-get update \
