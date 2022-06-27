@@ -24,7 +24,7 @@ RUN apt-get update \
       wget \
       x11vnc \
       xvfb \
- && rm -rf /var/lib/apt/lists/*
+
  
  WORKDIR /tmp
  
@@ -32,7 +32,8 @@ RUN apt-get update \
 	add-pkg software-properties-common apt-transport-https ca-certificates curl gnupg2 libgtk-3-0 procps libgbm-dev && \
 	curl -s 'https://updates.signal.org/desktop/apt/keys.asc' | apt-key add - && \
 	add-apt-repository 'deb https://updates.signal.org/desktop/apt xenial main' && \
-	add-pkg signal-desktop=5.47.0
+	add-pkg signal-desktop=5.47.0 && \
+	rm -rf /var/lib/apt/lists/*
 
  COPY startapp.sh /startapp.sh
  
