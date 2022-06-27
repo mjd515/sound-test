@@ -13,7 +13,7 @@ RUN apt-get update \
       libgtk-3-0-0 \
       libncursesw5 \
       libopenal1 \
-      libsdl-image1.2 
+      libsdl-image1.2 \
       libsdl-ttf2.0-0 \
       libsdl1.2debian \
       libsndfile1 \
@@ -48,7 +48,7 @@ RUN apt-get update \
  COPY startapp.sh /startapp.sh
  
 # Set environment variables
-ENV APP_NAME="signal-desktop"
+#ENV APP_NAME="signal-desktop"
 
 # Configure pulseaudio.
 COPY default.pa client.conf /etc/pulse/
