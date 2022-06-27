@@ -23,7 +23,7 @@ RUN apt-get update \
       ucspi-tcp \
       wget \
       x11vnc \
-      xvfb \
+      xvfb
 
  
  WORKDIR /tmp
