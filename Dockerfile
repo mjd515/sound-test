@@ -79,7 +79,7 @@ RUN groupadd df \
 WORKDIR /home/df
 USER df
 
-# Install signal/discord.
+EXPOSE 8080 8081
 
  
  
