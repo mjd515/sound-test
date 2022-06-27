@@ -1,6 +1,6 @@
 FROM debian:buster
 
-ENV LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=C.UTF-8 DISPLAY=:0.0
+ENV LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=C.UTF-8 DISPLAY=:0.0 APP_NAME="signal-desktop"
 
 # Install dependencies.
 RUN apt-get update \
@@ -83,3 +83,10 @@ USER df
 
  
  
+# Metadata.
+LABEL \
+      org.label-schema.name="signal-desktop" \
+      org.label-schema.description="Docker container for Signal" \
+      org.label-schema.version="unknown" \
+      org.label-schema.vcs-url="https://github.com/c64bob/docker-signal" \
+      org.label-schema.schema-version="1.0"
