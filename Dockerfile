@@ -10,10 +10,10 @@ RUN apt-get update \
       gstreamer1.0-pulseaudio \
       gstreamer1.0-tools \
       libglu1-mesa \
-      libgtk2.0-0 \
+      libgtk-3-0-0 \
       libncursesw5 \
       libopenal1 \
-      libsdl-image1.2 \
+      libsdl-image1.2 
       libsdl-ttf2.0-0 \
       libsdl1.2debian \
       libsndfile1 \
@@ -23,17 +23,27 @@ RUN apt-get update \
       ucspi-tcp \
       wget \
       x11vnc \
-      xvfb
-
- 
- WORKDIR /tmp
- 
- RUN \
-	add-pkg software-properties-common apt-transport-https ca-certificates curl gnupg2 libgtk-3-0 procps libgbm-dev && \
-	curl -s 'https://updates.signal.org/desktop/apt/keys.asc' | apt-key add - && \
+      xvfb \
+      software-properties-common \
+      apt-transport-https \
+      ca-certificates \
+      gnupg2 \ 
+      procps \
+      libgbm-dev && \
+      curl -s 'https://updates.signal.org/desktop/apt/keys.asc' | apt-key add - && \
 	add-apt-repository 'deb https://updates.signal.org/desktop/apt xenial main' && \
 	add-pkg signal-desktop=5.47.0 && \
 	rm -rf /var/lib/apt/lists/*
+
+ 
+# WORKDIR /tmp
+ 
+ #RUN \
+#	add-pkg software-properties-common apt-transport-https ca-certificates curl gnupg2 libgtk-3-0 procps libgbm-dev && \
+#	curl -s 'https://updates.signal.org/desktop/apt/keys.asc' | apt-key add - && \
+#	add-apt-repository 'deb https://updates.signal.org/desktop/apt xenial main' && \
+#	add-pkg signal-desktop=5.47.0 && \
+#	rm -rf /var/lib/apt/lists/*
 
  COPY startapp.sh /startapp.sh
  
